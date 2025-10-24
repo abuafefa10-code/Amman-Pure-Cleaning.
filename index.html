@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amman Pure Cleaning - Customer Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: left;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .star {
+            font-size: 2em;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .star:hover, .star.active {
+            color: #ffc107;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Amman Pure Cleaning</div>
+        <div class="subtitle">Your Trusted Partner for Spotless Spaces<br>We make your world shine! ✨</div>
+        <p>Thank you for choosing us! Please rate your recent cleaning experience to help us improve.</p>
+        
+        <form id="feedbackForm">
+            <div class="section">
+                <label for="serviceDate">Date of Service:</label>
+                <input type="date" id="serviceDate" name="serviceDate">
+            </div>
+            <div class="section">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="e.g., Home Address or Office">
+            </div>
+            <div class="section">
+                <label for="serviceType">Service Type:</label>
+                <input type="text" id="serviceType" name="serviceType" placeholder="e.g., Residential, Commercial, Deep Clean">
+            </div>
+            
+            <div class="section">
+                <label>Overall Satisfaction:</label>
+                <div class="rating" data-rating="0">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <input type="hidden" name="overallSatisfaction" id="overallSatisfaction">
+            </div>
+            
+            <div class="section">
+                <label>Quality of Clean:</label>
+                <div class="rating" data-rating="0">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <input type="hidden" name="qualityOfClean" id="qualityOfClean">
+            </div>
+            
+            <div class="section">
+                <label>Professionalism:</label>
+                <div class="rating" data-rating="0">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <input type="hidden" name="professionalism" id="professionalism">
+            </div>
+            
+            <div class="section">
+                <label>Value for Money:</label>
+                <div class="rating" data-rating="0">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <input type="hidden" name="valueForMoney" id="valueForMoney">
+            </div>
+            
+            <div class="section">
+                <label>Would You Recommend Us?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="recommend" value="Yes"> Yes</label>
+                    <label><input type="radio" name="recommend" value="No"> No</label>
+                    <label><input type="radio" name="recommend" value="Maybe"> Maybe</label>
+                </div>
+            </div>
+            
+            <div class="section">
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="What did you love? What could we improve?"></textarea>
+            </div>
+            
+            <div class="section">
+                <label for="name">Your Name (Optional):</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="section">
+                <label for="contact">Email/Phone (Optional):</label>
+                <input type="text" id="contact" name="contact">
+            </div>
+            
+            <button type="submit">Submit Feedback</button>
+        </form>
+        
+        <footer>
+            Thank you for helping us shine brighter! If you have concerns, contact us at [Your Phone/Email].<br>
+            Amman Pure Cleaning – Pure Results, Every Time. 🌟
+        </footer>
+    </div>
+
+    <script>
+        // Add interactivity to star ratings
+        document.querySelectorAll('.rating').forEach(rating => {
+            const stars = rating.querySelectorAll('.star');
+            const hiddenInput = rating.nextElementSibling;
+            
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    const value = star.getAttribute('data-value');
+                    rating.setAttribute('data-rating', value);
+                    hiddenInput.value = value;
+                    
+                    // Update star colors
+                    stars.forEach(s => {
+                        s.classList.remove('active');
+                        if (s.getAttribute('data-value') <= value) {
+                            s.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+        
+        // Handle form submission (for demo, just alert; integrate with backend as needed)
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your feedback! We appreciate it.');
+            // Here, you can add code to send data to a server (e.g., via fetch to a backend endpoint)
+        });
+    </script>
+</body>
+</html>
